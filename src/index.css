@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiper styles */
+.partners-swiper {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.partners-swiper .swiper-slide {
+  opacity: 0.7;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: relative;
+}
+
+.partners-swiper .swiper-slide:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(209, 202, 255, 0.1), rgba(209, 202, 255, 0.5));
+  transform: translateY(-50%);
+}
+
+.partners-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Ensure Swiper container is visible */
+.swiper {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Create chain-like effect */
+.partners-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
